@@ -1,0 +1,73 @@
+@import './dark.less';
+@import './light.less';
+
+@font-face {
+  font-family: 'WebFont';
+  src: url('../assets/font/regular.otf');
+}
+
+html,
+body {
+  // 色弱模式
+  &.color-weak {
+    filter: invert(80%);
+  }
+
+  // 网站灰色模式
+  &.gray-mode {
+    filter: grayscale(100%);
+    filter: progid:dximagetransform.microsoft.basicimage(grayscale=1);
+  }
+
+  font-family: 'WebFont';
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  line-height: 1.6;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+}
+
+#app {
+  margin: 0 auto;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media screen and (min-width: 600px) {
+  ::-webkit-scrollbar-thumb {
+    width: 5px;
+  }
+
+  #app::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  #app {
+    max-width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    margin: auto;
+    border-top: 0;
+    border-bottom: 0;
+    border: 1px solid #000;
+  }
+}
